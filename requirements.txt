@@ -1,3 +1,0 @@
-black
-pandas
-more_itertools

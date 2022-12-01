@@ -30,18 +30,14 @@ flake8: venv-test
 
 .PHONY: black-check
 black-check: venv-test
-	$(PYTHON3) -m black -l 120 --check --exclude $(ENV_DIR) .
+	$(PYTHON3) -m black -l 120 --check --force-exclude $(ENV_DIR) .
 
 .PHONY: black
 black: venv-test
-	$(PYTHON3) -m black -l 120 --exclude $(ENV_DIR) .
-
-.PHONY: shellcheck
-shellcheck:
-	shellcheck -e SC1090 -e SC1091 -x scripts/*.sh
+	$(PYTHON3) -m black -l 120 --force-exclude $(ENV_DIR) .
 
 .PHONY: lint
-lint: black-check flake8 shellcheck
+lint: black-check flake8
 
 .PHONY: notebook
 notebook: venv

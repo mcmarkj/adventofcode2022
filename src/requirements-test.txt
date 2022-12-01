@@ -2,3 +2,6 @@ black
 pandas
 more_itertools
 pytest
+flake8
+ipython
+jupyter

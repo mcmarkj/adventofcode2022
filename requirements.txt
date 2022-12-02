@@ -2,3 +2,4 @@ black
 pandas
 more_itertools
 pytest
+pandas

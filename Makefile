@@ -1,5 +1,5 @@
 ENV_DIR = $(CURDIR)/.venv
-ENV = $(ENV_DIR)/.venv/
+ENV = $(ENV_DIR)/.venv
 ENV_RUN_DEP = $(ENV_DIR)/.run-dep
 ENV_TEST_DEP = $(ENV_DIR)/.test-dep
 PYTHON3 = $(ENV_DIR)/bin/python3

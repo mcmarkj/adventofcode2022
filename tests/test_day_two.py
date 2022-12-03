@@ -2,7 +2,7 @@ import unittest
 from days.two import play_rock, play_paper, play_scissors, determine_winner, get_desired_result, split_plays
 
 
-class TestDayOne(unittest.TestCase):
+class TestDayTwo(unittest.TestCase):
     def test_splits_plays_correctly(self):
         input = ["x z", "o l"]
         result = split_plays(input)

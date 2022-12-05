@@ -17,8 +17,22 @@ def split_compartments(input: str) -> list[str]:
     return [input[: half + rem], input[half + rem :]]
 
 
+def get_groups(input_content: list) -> list[list[str]]:
+    groups = []
+    start = 0
+    end = len(input_content)
+    step = 3
+    for i in range(start, end, step):
+        x = i
+        groups.append(input_content[x : x + step])
+    return groups
+
+
 def find_common_item(input: list[str]) -> str:
-    return list(set(input[0]).intersection(input[1]))[0]
+    try:
+        return list(set(input[0]).intersection(input[1], input[2]))[0]
+    except:
+        return list(set(input[0]).intersection(input[1]))[0]
 
 
 def part_one(input_content: list) -> str:
@@ -29,7 +43,10 @@ def part_one(input_content: list) -> str:
 
 
 def part_two(input_content: list) -> str:
-    return ""
+    split = get_groups(input_content)
+    commons = [find_common_item(s) for s in split]
+    priorities = [get_priority(s) for s in commons]
+    return sum(priorities)
 
 
 def run(test: bool = None):

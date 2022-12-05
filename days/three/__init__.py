@@ -31,7 +31,7 @@ def get_groups(input_content: list) -> list[list[str]]:
 def find_common_item(input: list[str]) -> str:
     try:
         return list(set(input[0]).intersection(input[1], input[2]))[0]
-    except:
+    except IndexError:
         return list(set(input[0]).intersection(input[1]))[0]
 
 
